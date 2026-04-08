@@ -1,1 +1,1 @@
-# jeni9378-ai.github.io
+# jeni9378.github.io
