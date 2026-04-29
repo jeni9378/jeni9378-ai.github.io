@@ -1,176 +1,243 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espaço Vip Beleza Profissional | Cabelo, Unha, Cílios</title>
     <style>
-        /* CSS Estilizado */
-        :root {
-            --cor-principal: #d4a373; /* Dourado suave */
-            --cor-fundo: #faf3e0;
-            --cor-texto: #333;
-            --cor-preto: #000;
-            --cor-branco: #fff;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--cor-fundo);
-            color: var(--cor-texto);
+            box-sizing: border-box;
         }
-
-        /* Cabeçalho */
-        header {
-            background-color: var(--cor-preto);
-            color: var(--cor-branco);
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header h1 { margin: 0; font-size: 2em; }
-        header p { margin: 5px 0 0; color: var(--cor-principal); }
-
-        /* Banner */
-        .banner {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        /* Container */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px 0;
-        }
-
-        /* Tabela de Preços */
-        .servicos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .servico-card {
-            background: var(--cor-branco);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-top: 3px solid var(--cor-principal);
-        }
-
-        .servico-card h3 {
-            color: var(--cor-principal);
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        .item {
+       
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            font-size: 1.1em;
+            flex-direction: column;
         }
-
-        .preco {
-            font-weight: bold;
-            color: var(--cor-preto);
-        }
-
-        /* Botão WhatsApp */
-        .btn-whats {
-            display: block;
-            width: 250px;
-            margin: 40px auto;
-            text-align: center;
-            background-color: #25d366;
+       
+        header {
+            background-color: #2c3e50;
             color: white;
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: 0.3s;
-        }
-
-        .btn-whats:hover { background-color: #128c7e; }
-
-        footer {
-            background-color: var(--cor-preto);
-            color: var(--cor-branco);
-            text-align: center;
             padding: 20px;
-            margin-top: 40px;
+            text-align: center;
         }
-
-        @media (max-width: 768px) {
-            .servicos { grid-template-columns: 1fr; }
+       
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+       
+        section {
+            width: 100%;
+            flex: 1;
+            background-color: #f0f0f0;
+            display: flex;
+            min-height: 500px;
+        }
+       
+        #primeiro {
+            width: 20%;
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-right: 1px solid #ccc;
+        }
+       
+        #segundo {
+            width: 60%;
+            background-color: white;
+            padding: 30px;
+        }
+       
+        #terceiro {
+            width: 20%;
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-left: 1px solid #ccc;
+        }
+       
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 200px;
+        }
+       
+        .moeda {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+       
+        .moeda:hover {
+            background-color: #2980b9;
+        }
+       
+        .conversor {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+       
+        input, select, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+       
+        button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+       
+        button:hover {
+            background-color: #219a52;
+        }
+       
+        .resultado {
+            background-color: #d5f5e3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+       
+        .dica {
+            background-color: rgba(249, 231, 159, 0.8); /* Cor com transparência */
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 14px;
+            background-image: url('https://investidorsardinha.r7.com/wp-content/uploads/2020/09/como-comprar-dolar-variacoes-de-precos-e-tipos-de-dolar-1024x661.jpg&#39;);
+            background-size: cover;
+            color: white; /* Texto branco para contraste */
+        }
+       
+        h5 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+       
+        img {
+            width: 50px;
+            height: 50px;
+            display: flex;
         }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>Espaço Vip Beleza</h1>
-    <p>Sua autoestima renovada</p>
-</header>
-
-<div class="banner">
-    <h2>Especialistas em Cabelo, Unhas e Estética</h2>
-    <p>Agende sua transformação hoje mesmo.</p>
-</div>
-
-<div class="container">
-    <h2 style="text-align: center;">Nossos Serviços</h2>
-    
-    <div class="servicos">
-        <!-- Cabelo -->
-        <div class="servico-card">
-            <h3>💇‍♀️ Cabelo</h3>
-            <div class="item"><span>Escova Simples</span> <span class="preco">R$ 50-80</span></div>
-            <div class="item"><span>Progressiva</span> <span class="preco">R$ 150-300</span></div>
-            <div class="item"><span>Luzes/Descoloração</span> <span class="preco">R$ 250+</span></div>
-            <div class="item"><span>Hidratação Profunda</span> <span class="preco">R$ 70-110</span></div>
+    <header>
+        <h2>💱 Portal do Câmbio</h2>
+        <p>Entenda como funciona a troca de moedas no mundo</p>
+        <audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
+    </header>
+   
+    <h1>📈 Câmbio de Moedas</h1>
+   
+    <section>
+        <div id="primeiro">
+            <h3>💡 Curiosidades</h3>
+            <div class="dica">
+                <strong> Dólar Americano (USD)</strong>
+                É a moeda mais negociada do mundo, presente em 88% das transações globais.
+            </div>
+            <div class="dica">
+                <strong>Euro (EUR)</strong><br>
+                Moeda oficial de 20 países da União Europeia.
+            </div>
+            <div class="dica">
+                <strong>Libra Esterlina (GBP)</strong><br>
+                É a moeda mais antiga do mundo ainda em uso.
+            </div>
+            <div class="dica">
+                <strong>Iene Japonês (JPY)</strong><br>
+                Terceira moeda mais negociada no mercado global.
+            </div>
         </div>
-
-        <!-- Unhas -->
-        <div class="servico-card">
-            <h3>💅 Unha</h3>
-            <div class="item"><span>Manicure</span> <span class="preco">R$ 40</span></div>
-            <div class="item"><span>Pedicure</span> <span class="preco">R$ 50</span></div>
-            <div class="item"><span>Alongamento (Gel)</span> <span class="preco">R$ 150</span></div>
-            <div class="item"><span>Manutenção Gel</span> <span class="preco">R$ 90</span></div>
+       
+        <div id="segundo">
+            <h5>💰 O que é o câmbio de moedas?</h5>
+            <p>Câmbio de moedas é a troca de uma moeda por outra. Ele acontece o tempo todo no mundo, seja quando uma empresa importa produtos, um turista viaja para outro país ou investidores aplicam seu dinheiro no exterior.</p>
+           
+            <p>O valor de uma moeda em relação a outra é chamado de <strong>taxa de câmbio</strong>. Essa taxa varia diariamente conforme a oferta e demanda, a economia dos países, juros, inflação e até notícias políticas.</p>
+           
+            <h3 style="margin-top: 20px;">🔄 Tipos de câmbio</h3>
+            <ul style="margin-left: 20px; line-height: 1.8;">
+                <li><strong>Câmbio Fixo:</strong> o governo define o valor da moeda. Exemplo: Arábia Saudita (SAR atrelado ao USD).</li>
+                <li><strong>Câmbio Flutuante:</strong> o valor é definido pelo mercado. Exemplo: Real (BRL), Dólar (USD), Euro (EUR).</li>
+                <li><strong>Câmbio Administrado:</strong> mistura dos dois, com intervenção do banco central.</li>
+            </ul>
+           
+            <div class="conversor">
+                <h3>🧮 Conversor de Moedas (exemplo didático)</h3>
+                <p>Digite um valor em Reais (BRL) e veja a conversão aproximada:</p>
+                <input type="number" id="valorReal" placeholder="Valor em R$">
+                <select id="moedaDestino">
+                    <option value="0.18">Dólar (USD) - R$ 1 ≈ $ 0,18</option>
+                    <option value="0.17">Euro (EUR) - R$ 1 ≈ € 0,17</option>
+                    <option value="0.15">Libra (GBP) - R$ 1 ≈ £ 0,15</option>
+                    <option value="27.50">Iene (JPY) - R$ 1 ≈ ¥ 27,50</option>
+                </select>
+                <button onclick="converter()">Converter</button>
+                <div id="resultado" class="resultado"></div>
+            </div>
         </div>
-
-        <!-- Estética -->
-        <div class="servico-card">
-            <h3>👁️ Estética/Olhar</h3>
-            <div class="item"><span>Sobrancelha (Design)</span> <span class="preco">R$ 35</span></div>
-            <div class="item"><span>Henna</span> <span class="preco">R$ 50</span></div>
-            <div class="item"><span>Cílios (Volume Russo)</span> <span class="preco">R$ 120-200</span></div>
-            <div class="item"><span>Lifting de Cílios</span> <span class="preco">R$ 100</span></div>
+       
+        <div id="terceiro">
+            <h3>📊 Cotações aproximadas</h3>
+            <div class="moeda" onclick="alert('Dólar comercial: cerca de R$ 5,50')">
+                🇺🇸 USD → R$ 5,50
+            </div>
+            <div class="moeda" onclick="alert('Euro comercial: cerca de R$ 6,00')">
+                🇪🇺 EUR → R$ 6,00
+            </div>
+            <div class="moeda" onclick="alert('Libra: cerca de R$ 7,00')">
+                🇬🇧 GBP → R$ 7,00
+            </div>
+            <div class="moeda" onclick="alert('Iene: cerca de R$ 0,036')">
+                🇯🇵 JPY → R$ 0,036
+            </div>
+            <div class="dica" style="margin-top: 20px;">
+                <strong>⚠️ Importante:</strong> Os valores acima são apenas exemplos didáticos. As cotações reais mudam constantemente.
+            </div>
         </div>
-    </div>
-
-    <!-- Link do WhatsApp: Trocar o número 55... pela do salão -->
-    <a href="https://wa.me, gostaria de agendar um horário." class="btn-whats" target="_blank">
-        Agendar pelo WhatsApp
-    </a>
-</div>
-
-<footer>
-    <p>Espaço Vip Beleza &copy; 2026 - R. Principal, 123 - Cidade/UF</p>
-</footer>
-
+    </section>
+   
+    <footer>
+        <p>Projeto educacional - Entendendo o mercado de câmbio | Desenvolvido em sala de aula</p>
+        <p>💡 As moedas flutuam diariamente conforme a economia global</p>
+    </footer>
+    <script>
+        function converter() {
+            let reais = document.getElementById('valorReal').value;
+            let select = document.getElementById('moedaDestino');
+            let taxa = select.value;
+            let moedaNome = select.options[select.selectedIndex].text;
+           
+            if (reais === "" || reais <= 0) {
+                document.getElementById('resultado').innerHTML = "⚠️ Por favor, digite um valor válido!";
+                document.getElementById('resultado').style.backgroundColor = "#fadbd8";
+                return;
+            }
+           
+            let convertido = reais * taxa;
+            document.getElementById('resultado').innerHTML = `R$ ${reais} equivalem a ${convertido.toFixed(2)} ${moedaNome}`;
+            document.getElementById('resultado').style.backgroundColor = "#d5f5e3";
+        }
+    </script>
 </body>
 </html>
-
